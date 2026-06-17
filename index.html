@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Esra Yıldız — Astroloji, Numeroloji ve Inner Speak çalışmalarıyla kendinizi daha derin tanımanın yolculuğuna çıkın." />
+  <title>Esra Yıldız — Astroloji & Numeroloji & Inner Speak</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Compiled CSS -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="#" class="header__logo">Esra <span>Yıldız</span></a>
+
+      <nav class="header__nav" aria-label="Ana menü">
+        <a href="#hakkinda">Hakkımda</a>
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#yaklasim">Yaklaşımım</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+
+      <a href="#iletisim" class="header__cta">Seans Al</a>
+
+      <button class="header__hamburger" aria-label="Menüyü aç" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" aria-label="Mobil menü">
+    <a href="#hakkinda">Hakkımda</a>
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#yaklasim">Yaklaşımım</a>
+    <a href="#yorumlar">Yorumlar</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+
+  <main>
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+    <section class="hero" id="anasayfa" aria-label="Karşılama">
+      <canvas class="hero__canvas" id="starCanvas" aria-hidden="true"></canvas>
+
+      <div class="hero__glow hero__glow--purple" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--gold"   aria-hidden="true"></div>
+
+      <!-- Floating cosmic symbols -->
+      <span class="hero__symbol" style="top:18%;left:8%"  aria-hidden="true">☽</span>
+      <span class="hero__symbol" style="top:25%;right:9%" aria-hidden="true">✦</span>
+      <span class="hero__symbol" style="top:65%;left:5%"  aria-hidden="true">♄</span>
+      <span class="hero__symbol" style="top:70%;right:6%" aria-hidden="true">⊹</span>
+      <span class="hero__symbol" style="top:45%;left:2%"  aria-hidden="true">☿</span>
+      <span class="hero__symbol" style="top:40%;right:3%" aria-hidden="true">♃</span>
+      <span class="hero__symbol" style="top:80%;left:18%" aria-hidden="true">✧</span>
+      <span class="hero__symbol" style="top:15%;right:22%"aria-hidden="true">♀</span>
+
+      <div class="hero__inner">
+        <p class="hero__eyebrow">Astroloji · Numeroloji · Inner Speak</p>
+
+        <h1 class="hero__title">
+          Kendinizi<br>
+          <em>Derinlemesine</em><br>
+          Tanıyın
+        </h1>
+
+        <p class="hero__sub">
+          Doğum haritanız, sayılarınız ve bilinçaltı kalıplarınız aracılığıyla
+          kim olduğunuzu, neden böyle tepkiler verdiğinizi ve potansiyelinizi keşfedin.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#iletisim" class="btn btn--primary">
+            Seans Rezervasyonu
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </a>
+          <a href="#hizmetler" class="btn btn--outline">Hizmetleri İncele</a>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>Keşfet</span>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         STATS
+    ==================================================== -->
+    <section class="stats" aria-label="İstatistikler">
+      <div class="stats__inner stagger">
+        <div class="stats__item">
+          <div class="stats__num" data-count="500" data-suffix="+">500+</div>
+          <div class="stats__label">Tamamlanan Seans</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__num" data-count="8" data-suffix=" Yıl">8 Yıl</div>
+          <div class="stats__label">Deneyim</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__num" data-count="3" data-suffix=" Alan">3 Alan</div>
+          <div class="stats__label">Uzmanlık</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__num" data-count="98" data-suffix="%">98%</div>
+          <div class="stats__label">Memnuniyet</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         ABOUT
+    ==================================================== -->
+    <section class="about" id="hakkinda" aria-label="Hakkımda">
+      <div class="about__bg" aria-hidden="true"></div>
+      <div class="about__inner">
+
+        <div class="about__visual reveal">
+          <div class="about__orbit">
+            <div class="about__orbit-ring about__orbit-ring--1"></div>
+            <div class="about__orbit-ring about__orbit-ring--2"></div>
+            <div class="about__orbit-ring about__orbit-ring--3"></div>
+
+            <div class="about__orbit-dot about__orbit-dot--1"></div>
+            <div class="about__orbit-dot about__orbit-dot--2"></div>
+            <div class="about__orbit-dot about__orbit-dot--3"></div>
+            <div class="about__orbit-dot about__orbit-dot--4"></div>
+
+            <div class="about__orbit-center">
+              <span class="symbol">✦</span>
+              <span>Esra Yıldız</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <span class="about__eyebrow reveal">Benim Hikayem</span>
+
+          <h2 class="about__title reveal">
+            Burçlardan fazlası:<br>
+            <strong>Sizin haritanız</strong>
+          </h2>
+
+          <p class="about__text reveal">
+            Merhaba, ben Esra. Astroloji, numeroloji ve Inner Speak çalışmalarıyla
+            insanların kendilerini daha iyi tanımalarına destek oluyorum.
+          </p>
+          <p class="about__text reveal">
+            Benim yaklaşımım sadece burç yorumlamak değil. Çünkü aynı burçtan olan insanlar
+            bile birbirinden çok farklı olabiliyor. Doğum haritasına baktığımda kişinin neden
+            bazı olaylara belirli tepkiler verdiğini, güçlü yönlerini ve yaşamındaki tekrar
+            eden döngüleri anlamaya çalışıyorum.
+          </p>
+          <p class="about__text reveal">
+            Amacım insanlara geleceği söylemekten çok, <strong>kendilerini anlamalarına</strong> ve
+            potansiyellerini keşfetmelerine yardımcı olmak.
+          </p>
+
+          <div class="about__pillars stagger">
+            <span class="about__pillar">Doğum Haritası</span>
+            <span class="about__pillar">Yaşam Döngüleri</span>
+            <span class="about__pillar">Bilinçaltı Kalıplar</span>
+            <span class="about__pillar">Güçlü Yönler</span>
+            <span class="about__pillar">Potansiyel Keşfi</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================
+         SERVICES
+    ==================================================== -->
+    <section class="services" id="hizmetler" aria-label="Hizmetler">
+      <div class="services__bg" aria-hidden="true"></div>
+      <div class="services__inner">
+
+        <header class="services__header">
+          <span class="services__eyebrow reveal">Hizmetler</span>
+          <h2 class="services__title reveal">Üç disiplin, <br>bir bütün yolculuk</h2>
+          <p class="services__desc reveal">
+            Her araç kendi başına değerlidir; ama birlikte kullanıldığında
+            çok daha derin bir tablo ortaya çıkar.
+          </p>
+        </header>
+
+        <div class="services__grid stagger">
+
+          <!-- Astroloji -->
+          <article class="service-card service-card--astro">
+            <div class="service-card__icon-wrap" aria-hidden="true">☽</div>
+            <p class="service-card__eyebrow">Astroloji</p>
+            <h3 class="service-card__title">Doğum Haritası Analizi</h3>
+            <p class="service-card__text">
+              Doğduğunuz an gökyüzünün anlık fotoğrafı olan doğum haritanız,
+              kişiliğinizin, ilişki kalıplarınızın ve potansiyelinizin derin bir
+              haritasını sunar.
+            </p>
+            <ul class="service-card__list">
+              <li>Kişilik ve kimlik analizi</li>
+              <li>İlişki ve Synastry yorumu</li>
+              <li>Geçiş (Transit) dönem okuyuşu</li>
+              <li>Kariyer ve yaşam amacı</li>
+            </ul>
+          </article>
+
+          <!-- Numeroloji -->
+          <article class="service-card service-card--numerology">
+            <div class="service-card__icon-wrap" aria-hidden="true">∞</div>
+            <p class="service-card__eyebrow">Numeroloji</p>
+            <h3 class="service-card__title">Sayıların Dili</h3>
+            <p class="service-card__text">
+              Adınız ve doğum tarihinizin sayısal titreşimleri, yaşam amacınızı,
+              kişisel yıllarınızı ve gizli yeteneklerinizi açığa çıkarır.
+            </p>
+            <ul class="service-card__list">
+              <li>Yaşam Yolu sayısı analizi</li>
+              <li>Ad ve soyad titreşimleri</li>
+              <li>Kişisel yıl ve dönem tahmini</li>
+              <li>Uyumluluk değerlendirmesi</li>
+            </ul>
+          </article>
+
+          <!-- Inner Speak -->
+          <article class="service-card service-card--inner">
+            <div class="service-card__icon-wrap" aria-hidden="true">◎</div>
+            <p class="service-card__eyebrow">Inner Speak</p>
+            <h3 class="service-card__title">Bilinçaltı Kalıplar</h3>
+            <p class="service-card__text">
+              Fark ettiğiniz konuların altındaki duygusal ve bilinçaltı kalıplarına
+              bakarak tekrar eden döngüleri çözümlemenize destek olur.
+            </p>
+            <ul class="service-card__list">
+              <li>Duygusal blok keşfi</li>
+              <li>Tekrar eden kalıp analizi</li>
+              <li>Bilinçaltı inanç sistemleri</li>
+              <li>Dönüşüm çalışması</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         APPROACH
+    ==================================================== -->
+    <section class="approach" id="yaklasim" aria-label="Yaklaşımım">
+      <div class="approach__bg" aria-hidden="true"></div>
+      <div class="approach__inner">
+
+        <header class="approach__header">
+          <span class="approach__eyebrow reveal">Nasıl Çalışıyorum</span>
+          <h2 class="approach__title reveal">
+            Geleceği kehanet etmek değil,<br>
+            <em>şimdiyi anlamak</em>
+          </h2>
+        </header>
+
+        <div class="approach__steps stagger">
+
+          <div class="step-card">
+            <span class="step-card__num">01</span>
+            <div class="step-card__content">
+              <h3 class="step-card__title">Haritayı Okumak</h3>
+              <p class="step-card__text">
+                Doğum haritanızı ve sayılarınızı birlikte inceliyoruz.
+                Hangi gezegenlerin hangi evlerde yer aldığı, hangi açıları
+                yaptığı size özgü bir hikaye anlatır.
+              </p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <span class="step-card__num">02</span>
+            <div class="step-card__content">
+              <h3 class="step-card__title">Kalıpları Tanımak</h3>
+              <p class="step-card__text">
+                Yaşamınızda tekrar eden olayları, ilişki dinamiklerini ve
+                duygusal tepkileri haritanızdaki semboller üzerinden
+                birlikte yorumluyoruz.
+              </p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <span class="step-card__num">03</span>
+            <div class="step-card__content">
+              <h3 class="step-card__title">Derinleşmek</h3>
+              <p class="step-card__text">
+                Inner Speak çalışmasıyla kalıpların altındaki duygusal yükü
+                fark ediyoruz. Hangi inanç sistemi bu döngüyü besliyor
+                sorusunun yanıtını arıyoruz.
+              </p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <span class="step-card__num">04</span>
+            <div class="step-card__content">
+              <h3 class="step-card__title">Potansiyeli Görmek</h3>
+              <p class="step-card__text">
+                Güçlü yönlerinizi, henüz fark etmediğiniz yeteneklerinizi
+                ve önünüzdeki olanak pencerelerini birlikte keşfediyoruz.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="quote-block reveal">
+        <blockquote>
+          Haritanız bir kader değil; kendinizi anlamak için elinizde
+          olan en güçlü araçlardan biri.
+        </blockquote>
+        <cite>— Esra Yıldız</cite>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         CTA BANNER
+    ==================================================== -->
+    <section class="cta-banner" aria-label="Seans çağrısı">
+      <div class="cta-banner__bg" aria-hidden="true"></div>
+      <div class="cta-banner__inner">
+        <span class="cta-banner__eyebrow reveal">Başlamaya Hazır mısınız?</span>
+        <h2 class="cta-banner__title reveal">
+          Kendi haritanızı<br><em>keşfetme</em> zamanı
+        </h2>
+        <p class="cta-banner__text reveal">
+          Her seans tamamen size özel hazırlanır. Sorularınızı, dönemlerinizi
+          ve merak ettiklerinizi birlikte ele alırız.
+        </p>
+        <div class="cta-banner__actions">
+          <a href="#iletisim" class="btn btn--primary">
+            Seans Rezervasyonu Yap
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </a>
+          <a href="#hizmetler" class="btn btn--outline">Hizmetleri Gör</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         TESTIMONIALS
+    ==================================================== -->
+    <section class="testimonials" id="yorumlar" aria-label="Danışan yorumları">
+      <div class="testimonials__bg" aria-hidden="true"></div>
+      <div class="testimonials__inner">
+
+        <header class="testimonials__header">
+          <span class="testimonials__eyebrow reveal">Yorumlar</span>
+          <h2 class="testimonials__title reveal">Danışanların Deneyimleri</h2>
+        </header>
+
+        <div class="testimonials__grid stagger">
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 yıldız">★★★★★</div>
+            <p class="testimonial-card__text">
+              "Esra ile olan seanstan önce kendimle ilgili çok şey bildiğimi
+              sanıyordum. Ama haritamın bana gösterdiği kalıpları fark ettiğimde
+              neden hep aynı noktaya geldiğimi anladım. Gerçekten dönüştürücüydü."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">🌙</div>
+              <div>
+                <div class="testimonial-card__name">Ayşe K.</div>
+                <div class="testimonial-card__detail">Doğum Haritası Seansı</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 yıldız">★★★★★</div>
+            <p class="testimonial-card__text">
+              "Numeroloji analizi benim için bir ayna gibiydi. Özellikle kariyer
+              konusunda sürekli tereddüt ettiğimi ve bunun neden olduğunu
+              sayılarım üzerinden görmek inanılmaz açıklayıcıydı."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">✦</div>
+              <div>
+                <div class="testimonial-card__name">Zeynep M.</div>
+                <div class="testimonial-card__detail">Numeroloji Analizi</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 yıldız">★★★★★</div>
+            <p class="testimonial-card__text">
+              "Inner Speak çalışması benim için çok farklı bir deneyimdi.
+              Yıllardır farkında olmadığım bir inanç sisteminin ilişkilerimi
+              nasıl etkilediğini gördüm. Teşekkürler Esra."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">◎</div>
+              <div>
+                <div class="testimonial-card__name">Selin T.</div>
+                <div class="testimonial-card__detail">Inner Speak Seansı</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         CONTACT
+    ==================================================== -->
+    <section class="contact" id="iletisim" aria-label="İletişim">
+      <div class="contact__bg" aria-hidden="true"></div>
+      <div class="contact__inner">
+
+        <div class="contact__left">
+          <span class="contact__eyebrow reveal">İletişim</span>
+          <h2 class="contact__title reveal">
+            Yolculuğa<br><em>birlikte</em> başlayalım
+          </h2>
+          <p class="contact__text reveal">
+            Seans almak, bilgi edinmek veya hangi hizmetin size uygun
+            olduğunu konuşmak için benimle iletişime geçebilirsiniz.
+            Her mesaj özenle okunur ve yanıtlanır.
+          </p>
+
+          <div class="contact__links reveal">
+            <a href="mailto:info@equlion.com" class="contact__link">
+              <span>✉</span>
+              <span>info@equlion.com</span>
+            </a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="contact__link">
+              <span>📸</span>
+              <span>@esrayildiz.astro</span>
+            </a>
+            <span class="contact__link">
+              <span>🌍</span>
+              <span>Online Seans · Türkiye geneli</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="contact__form-wrap reveal">
+          <h3 class="contact__form-title">Seans Talebi</h3>
+
+          <form class="form" novalidate>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="firstName">Ad</label>
+                <input class="form__input" type="text" id="firstName" name="firstName" placeholder="Adınız" required />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="lastName">Soyad</label>
+                <input class="form__input" type="text" id="lastName" name="lastName" placeholder="Soyadınız" />
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="email">E-posta</label>
+              <input class="form__input" type="email" id="email" name="email" placeholder="ornek@email.com" required />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="service">Hizmet</label>
+              <select class="form__select" id="service" name="service">
+                <option value="" disabled selected>Hangi hizmeti merak ediyorsunuz?</option>
+                <option value="astro">Doğum Haritası Analizi</option>
+                <option value="numerology">Numeroloji Analizi</option>
+                <option value="inner">Inner Speak Seansı</option>
+                <option value="combined">Kombine Seans</option>
+                <option value="other">Genel Bilgi</option>
+              </select>
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="birthdate">Doğum Tarihi (opsiyonel)</label>
+              <input class="form__input" type="date" id="birthdate" name="birthdate" />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="message">Mesajınız</label>
+              <textarea class="form__textarea" id="message" name="message" placeholder="Sorularınızı veya gündeminizdeki konuları paylaşabilirsiniz..."></textarea>
+            </div>
+
+            <button type="submit" class="form__submit">Gönder →</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <div class="footer__logo">Esra <span>Yıldız</span></div>
+          <p class="footer__tagline">
+            Astroloji, Numeroloji ve Inner Speak çalışmalarıyla
+            kendinizi daha derin tanımanın yolculuğuna çıkın.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Hizmetler</p>
+          <ul class="footer__links">
+            <li><a href="#hizmetler">Doğum Haritası</a></li>
+            <li><a href="#hizmetler">Numeroloji</a></li>
+            <li><a href="#hizmetler">Inner Speak</a></li>
+            <li><a href="#iletisim">Kombine Seans</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Bağlantı</p>
+          <ul class="footer__links">
+            <li><a href="#hakkinda">Hakkımda</a></li>
+            <li><a href="#yaklasim">Yaklaşımım</a></li>
+            <li><a href="#yorumlar">Yorumlar</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Esra Yıldız — Tüm hakları saklıdır.</p>
+        <div class="footer__socials" aria-label="Sosyal medya">
+          <a href="#" class="footer__social" aria-label="Instagram">📸</a>
+          <a href="#" class="footer__social" aria-label="YouTube">▶</a>
+          <a href="#" class="footer__social" aria-label="WhatsApp">✉</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

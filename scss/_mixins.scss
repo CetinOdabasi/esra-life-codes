@@ -1,0 +1,54 @@
+@use 'variables' as *;
+
+// Responsive breakpoints
+@mixin mobile  { @media (max-width: 640px)  { @content; } }
+@mixin tablet  { @media (max-width: 900px)  { @content; } }
+@mixin desktop { @media (min-width: 901px)  { @content; } }
+
+// Glassmorphism card
+@mixin glass($blur: 20px, $bg: $color-surface) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $color-border;
+}
+
+// Gold gradient text
+@mixin gold-text {
+  background: linear-gradient(135deg, $color-gold 0%, $color-gold-light 50%, $color-gold 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Glow effect
+@mixin glow($color, $size: 60px) {
+  box-shadow: 0 0 $size rgba($color, 0.2), 0 0 #{$size * 2} rgba($color, 0.08);
+}
+
+// Section padding
+@mixin section-pad {
+  padding: $space-2xl 0;
+  @include tablet { padding: $space-xl 0; }
+}
+
+// Container
+@mixin container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+  @include mobile { padding: 0 $space-sm; }
+}
+
+// Flex center
+@mixin flex-center { display: flex; align-items: center; justify-content: center; }
+
+// Section label
+@mixin eyebrow {
+  font-family: $font-body;
+  font-size: $fs-xs;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  @include gold-text;
+}

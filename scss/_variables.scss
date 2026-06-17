@@ -1,0 +1,62 @@
+// ============================================================
+// DESIGN TOKENS
+// ============================================================
+
+// Colors
+$color-bg:          #06030f;
+$color-bg-alt:      #0d0820;
+$color-surface:     rgba(255, 255, 255, 0.04);
+$color-surface-hov: rgba(255, 255, 255, 0.08);
+
+$color-gold:        #c9a84c;
+$color-gold-light:  #e8c97a;
+$color-gold-glow:   rgba(201, 168, 76, 0.3);
+
+$color-purple:      #7b4fe8;
+$color-purple-soft: #a375f0;
+$color-purple-glow: rgba(123, 79, 232, 0.25);
+
+$color-rose:        #e87bc5;
+$color-teal:        #4fe8c8;
+
+$color-text:        #f0ecff;
+$color-text-muted:  rgba(240, 236, 255, 0.55);
+$color-border:      rgba(255, 255, 255, 0.08);
+$color-border-gold: rgba(201, 168, 76, 0.25);
+
+// Typography
+$font-display: 'Cormorant Garamond', Georgia, serif;
+$font-body:    'DM Sans', system-ui, sans-serif;
+
+$fs-xs:   0.75rem;
+$fs-sm:   0.875rem;
+$fs-base: 1rem;
+$fs-md:   1.125rem;
+$fs-lg:   1.375rem;
+$fs-xl:   1.75rem;
+$fs-2xl:  2.25rem;
+$fs-3xl:  3rem;
+$fs-4xl:  4rem;
+$fs-hero: clamp(3rem, 8vw, 6.5rem);
+
+// Spacing
+$space-xs:  0.5rem;
+$space-sm:  1rem;
+$space-md:  1.5rem;
+$space-lg:  2.5rem;
+$space-xl:  4rem;
+$space-2xl: 7rem;
+
+// Layout
+$max-width:     1200px;
+$radius-sm:     8px;
+$radius-md:     16px;
+$radius-lg:     24px;
+$radius-pill:   999px;
+
+// Transitions
+$ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+$ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+$dur-fast:   0.2s;
+$dur-base:   0.4s;
+$dur-slow:   0.7s;

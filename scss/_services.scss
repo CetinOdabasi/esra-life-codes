@@ -1,0 +1,165 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.services {
+  @include section-pad;
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background: $color-bg-alt;
+    pointer-events: none;
+  }
+
+  &__inner {
+    @include container;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $space-2xl;
+
+    @include tablet { margin-bottom: $space-xl; }
+  }
+
+  &__eyebrow {
+    @include eyebrow;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-3xl;
+    font-weight: 300;
+    margin-bottom: $space-sm;
+
+    @include mobile { font-size: $fs-2xl; }
+  }
+
+  &__desc {
+    color: $color-text-muted;
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: $fs-md;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-md;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.service-card {
+  @include glass(16px);
+  border-radius: $radius-lg;
+  padding: $space-xl $space-lg;
+  position: relative;
+  overflow: hidden;
+  transition: all $dur-base $ease-out;
+  cursor: default;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--card-glow);
+    opacity: 0;
+    transition: opacity $dur-base $ease-out;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--card-accent);
+
+    &::before { opacity: 1; }
+
+    .service-card__icon-wrap { transform: scale(1.08); }
+  }
+
+  &--astro {
+    --card-accent: #{rgba(201, 168, 76, 0.4)};
+    --card-glow: radial-gradient(ellipse at top, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+    --card-color: #{$color-gold};
+  }
+
+  &--numerology {
+    --card-accent: #{rgba(123, 79, 232, 0.4)};
+    --card-glow: radial-gradient(ellipse at top, rgba(123, 79, 232, 0.07) 0%, transparent 70%);
+    --card-color: #{$color-purple-soft};
+  }
+
+  &--inner {
+    --card-accent: #{rgba(232, 123, 197, 0.4)};
+    --card-glow: radial-gradient(ellipse at top, rgba(232, 123, 197, 0.06) 0%, transparent 70%);
+    --card-color: #{$color-rose};
+  }
+
+  &__icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: $radius-md;
+    border: 1px solid var(--card-accent);
+    @include flex-center;
+    margin-bottom: $space-lg;
+    font-size: 2rem;
+    transition: transform $dur-base $ease-out;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  &__eyebrow {
+    font-size: $fs-xs;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--card-color);
+    margin-bottom: $space-xs;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-xl;
+    font-weight: 500;
+    margin-bottom: $space-sm;
+    line-height: 1.2;
+  }
+
+  &__text {
+    color: $color-text-muted;
+    font-size: $fs-base;
+    line-height: 1.75;
+    margin-bottom: $space-lg;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: $fs-sm;
+      color: $color-text-muted;
+
+      &::before {
+        content: '◈';
+        color: var(--card-color);
+        font-size: 0.65rem;
+        margin-top: 0.35rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

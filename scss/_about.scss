@@ -1,0 +1,157 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.about {
+  @include section-pad;
+  position: relative;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 20% 50%, rgba(123, 79, 232, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &__inner {
+    @include container;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-2xl;
+    align-items: center;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: $space-xl;
+    }
+  }
+
+  &__visual {
+    position: relative;
+    @include flex-center;
+
+    @include tablet { order: -1; }
+  }
+
+  &__orbit {
+    position: relative;
+    width: 380px;
+    height: 380px;
+
+    @include mobile { width: 280px; height: 280px; }
+  }
+
+  &__orbit-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid $color-border-gold;
+
+    &--1 {
+      inset: 0;
+      animation: spin 30s linear infinite;
+    }
+    &--2 {
+      inset: 40px;
+      border-color: $color-border;
+      animation: spin 20s linear infinite reverse;
+    }
+    &--3 {
+      inset: 80px;
+      border-color: rgba(163, 117, 240, 0.15);
+      animation: spin 15s linear infinite;
+    }
+  }
+
+  &__orbit-center {
+    position: absolute;
+    inset: 0;
+    @include flex-center;
+    flex-direction: column;
+    gap: $space-xs;
+
+    .symbol {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+
+    span {
+      font-family: $font-display;
+      font-size: $fs-sm;
+      color: $color-text-muted;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  &__orbit-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $color-gold;
+    box-shadow: 0 0 12px $color-gold;
+
+    &--1 { top: 0; left: 50%; transform: translate(-50%, -50%); }
+    &--2 { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+    &--3 { left: 0; top: 50%; transform: translate(-50%, -50%); background: $color-purple-soft; box-shadow: 0 0 12px $color-purple-soft; }
+    &--4 { right: 0; top: 50%; transform: translate(50%, -50%); background: $color-rose; box-shadow: 0 0 12px $color-rose; }
+  }
+
+  &__content {}
+
+  &__eyebrow {
+    @include eyebrow;
+    display: block;
+    margin-bottom: $space-md;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-3xl;
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: $space-lg;
+
+    @include mobile { font-size: $fs-2xl; }
+
+    strong {
+      font-weight: 600;
+      @include gold-text;
+    }
+  }
+
+  &__text {
+    color: $color-text-muted;
+    font-size: $fs-md;
+    line-height: 1.8;
+    margin-bottom: $space-md;
+  }
+
+  &__pillars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-xs;
+    margin-top: $space-lg;
+  }
+
+  &__pillar {
+    padding: 0.45rem 1.1rem;
+    border-radius: $radius-pill;
+    border: 1px solid $color-border-gold;
+    font-size: $fs-xs;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: $color-gold-light;
+    @include glass(12px);
+    transition: all $dur-fast $ease-out;
+
+    &:hover {
+      background: $color-gold-glow;
+      border-color: $color-gold;
+    }
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

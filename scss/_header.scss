@@ -1,0 +1,134 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: $space-md $space-lg;
+  transition: background $dur-base $ease-out, backdrop-filter $dur-base $ease-out;
+
+  &.scrolled {
+    @include glass(24px, rgba(6, 3, 15, 0.85));
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-family: $font-display;
+    font-size: $fs-xl;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+
+    span {
+      @include gold-text;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: $space-lg;
+
+    @include tablet { display: none; }
+
+    a {
+      font-size: $fs-sm;
+      font-weight: 500;
+      color: $color-text-muted;
+      letter-spacing: 0.02em;
+      transition: color $dur-fast $ease-out;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: $color-gold;
+        transition: width $dur-base $ease-out;
+      }
+
+      &:hover {
+        color: $color-text;
+        &::after { width: 100%; }
+      }
+    }
+  }
+
+  &__cta {
+    padding: 0.6rem 1.5rem;
+    border-radius: $radius-pill;
+    border: 1px solid $color-border-gold;
+    font-size: $fs-sm;
+    font-weight: 500;
+    color: $color-gold-light;
+    transition: all $dur-base $ease-out;
+    white-space: nowrap;
+
+    &:hover {
+      background: $color-gold-glow;
+      border-color: $color-gold;
+    }
+
+    @include tablet { display: none; }
+  }
+
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: $space-xs;
+
+    @include tablet { display: flex; }
+
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: $color-text;
+      border-radius: 2px;
+      transition: all $dur-base $ease-out;
+    }
+
+    &.active {
+      span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+  }
+}
+
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  @include glass(40px, rgba(6, 3, 15, 0.97));
+  @include flex-center;
+  flex-direction: column;
+  gap: $space-lg;
+  transform: translateX(100%);
+  transition: transform $dur-slow $ease-out;
+
+  &.open { transform: translateX(0); }
+
+  a {
+    font-family: $font-display;
+    font-size: $fs-2xl;
+    font-weight: 500;
+    color: $color-text-muted;
+    transition: color $dur-fast;
+
+    &:hover { color: $color-gold-light; }
+  }
+}

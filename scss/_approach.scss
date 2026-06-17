@@ -1,0 +1,148 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.approach {
+  @include section-pad;
+  position: relative;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &__inner {
+    @include container;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $space-2xl;
+
+    @include tablet { margin-bottom: $space-xl; }
+  }
+
+  &__eyebrow {
+    @include eyebrow;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-3xl;
+    font-weight: 300;
+    margin-bottom: $space-sm;
+
+    @include mobile { font-size: $fs-2xl; }
+
+    em {
+      font-style: italic;
+      @include gold-text;
+    }
+  }
+
+  &__steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-md;
+    max-width: 960px;
+    margin: 0 auto;
+
+    @include tablet { grid-template-columns: 1fr; }
+  }
+}
+
+.step-card {
+  @include glass(16px);
+  border-radius: $radius-lg;
+  padding: $space-lg;
+  display: flex;
+  gap: $space-lg;
+  align-items: flex-start;
+  transition: all $dur-base $ease-out;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(to bottom, $color-gold, $color-purple-soft);
+    transition: height $dur-slow $ease-out;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $color-border-gold;
+    background: $color-surface-hov;
+
+    &::before { height: 100%; }
+  }
+
+  &__num {
+    font-family: $font-display;
+    font-size: $fs-3xl;
+    font-weight: 300;
+    line-height: 1;
+    @include gold-text;
+    flex-shrink: 0;
+    width: 52px;
+  }
+
+  &__content {}
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-lg;
+    font-weight: 500;
+    margin-bottom: $space-xs;
+  }
+
+  &__text {
+    color: $color-text-muted;
+    font-size: $fs-base;
+    line-height: 1.75;
+  }
+}
+
+.quote-block {
+  @include container;
+  position: relative;
+  z-index: 1;
+  margin-top: $space-2xl;
+  text-align: center;
+
+  blockquote {
+    font-family: $font-display;
+    font-size: $fs-2xl;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.45;
+    max-width: 720px;
+    margin: 0 auto;
+    color: $color-text-muted;
+
+    @include mobile { font-size: $fs-lg; }
+
+    &::before { content: '\201C'; @include gold-text; font-size: 4rem; line-height: 0.5; vertical-align: -0.5em; margin-right: 0.1em; }
+    &::after  { content: '\201D'; @include gold-text; font-size: 4rem; line-height: 0.5; vertical-align: -0.5em; margin-left: 0.1em; }
+  }
+
+  cite {
+    display: block;
+    margin-top: $space-md;
+    font-style: normal;
+    font-size: $fs-sm;
+    letter-spacing: 0.1em;
+    color: $color-gold;
+    text-transform: uppercase;
+  }
+}

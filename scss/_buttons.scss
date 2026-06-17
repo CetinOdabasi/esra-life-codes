@@ -1,0 +1,50 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  padding: 0.875rem 2rem;
+  border-radius: $radius-pill;
+  font-size: $fs-sm;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: all $dur-base $ease-out;
+  cursor: pointer;
+
+  &--primary {
+    background: linear-gradient(135deg, $color-gold 0%, #b8892a 100%);
+    color: #0d0820;
+    font-weight: 600;
+    @include glow(#c9a84c, 24px);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(201, 168, 76, 0.4), 0 0 60px rgba(201, 168, 76, 0.15);
+    }
+
+    &:active { transform: translateY(0); }
+  }
+
+  &--outline {
+    border: 1px solid $color-border;
+    color: $color-text;
+    background: $color-surface;
+    backdrop-filter: blur(8px);
+
+    &:hover {
+      border-color: $color-border-gold;
+      background: $color-gold-glow;
+      color: $color-gold-light;
+    }
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    transition: transform $dur-fast $ease-out;
+  }
+
+  &:hover svg { transform: translateX(3px); }
+}

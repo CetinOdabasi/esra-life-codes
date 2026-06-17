@@ -1,0 +1,108 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.footer {
+  border-top: 1px solid $color-border;
+  padding: $space-xl 0 $space-lg;
+  position: relative;
+
+  &__inner {
+    @include container;
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: $space-xl;
+    margin-bottom: $space-xl;
+    padding-bottom: $space-xl;
+    border-bottom: 1px solid $color-border;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: $space-lg;
+    }
+  }
+
+  &__brand {}
+
+  &__logo {
+    font-family: $font-display;
+    font-size: $fs-xl;
+    font-weight: 600;
+    margin-bottom: $space-sm;
+
+    span { @include gold-text; }
+  }
+
+  &__tagline {
+    color: $color-text-muted;
+    font-size: $fs-sm;
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  &__col-title {
+    font-size: $fs-xs;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: $space-md;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+
+    a {
+      color: $color-text-muted;
+      font-size: $fs-sm;
+      transition: color $dur-fast;
+
+      &:hover { color: $color-text; }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-md;
+    flex-wrap: wrap;
+
+    @include mobile { flex-direction: column; text-align: center; }
+  }
+
+  &__copy {
+    font-size: $fs-xs;
+    color: rgba(240, 236, 255, 0.3);
+  }
+
+  &__socials {
+    display: flex;
+    gap: $space-sm;
+  }
+
+  &__social {
+    width: 36px;
+    height: 36px;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border;
+    @include flex-center;
+    font-size: 1rem;
+    color: $color-text-muted;
+    transition: all $dur-fast;
+
+    &:hover {
+      border-color: $color-border-gold;
+      color: $color-gold-light;
+      background: $color-gold-glow;
+    }
+  }
+}

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Esra Yıldız — Astroloji, Numeroloji ve Inner Speak çalışmalarıyla kendinizi daha derin tanımanın yolculuğuna çıkın." />
-  <title>Esra Yıldız — Astroloji & Numeroloji & Inner Speak</title>
+  <meta name="description" content="Esra Eşme — Astroloji, Numeroloji ve Inner Speak çalışmalarıyla kendinizi daha derin tanımanın yolculuğuna çıkın." />
+  <title>Esra Eşme — Astroloji & Numeroloji & Inner Speak</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,9 +19,15 @@
   <!-- =====================================================
        HEADER
   ====================================================== -->
+  <!-- Moon phase decoration -->
+  <div class="moon-phase" aria-hidden="true">
+    <span class="moon-phase__symbol">🌙</span>
+    <span class="moon-phase__label">Hilal</span>
+  </div>
+
   <header class="header" role="banner">
     <div class="header__inner">
-      <a href="#" class="header__logo">Esra <span>Yıldız</span></a>
+      <a href="#" class="header__logo">Esra <span>Eşme</span></a>
 
       <nav class="header__nav" aria-label="Ana menü">
         <a href="#hakkinda">Hakkımda</a>
@@ -54,10 +60,31 @@
          HERO
     ==================================================== -->
     <section class="hero" id="anasayfa" aria-label="Karşılama">
+      <!-- Star field -->
       <canvas class="hero__canvas" id="starCanvas" aria-hidden="true"></canvas>
+      <!-- Constellation lines -->
+      <canvas class="hero__canvas" id="constellationCanvas" aria-hidden="true"></canvas>
 
       <div class="hero__glow hero__glow--purple" aria-hidden="true"></div>
       <div class="hero__glow hero__glow--gold"   aria-hidden="true"></div>
+
+      <!-- Zodiac ring -->
+      <div class="zodiac-ring" aria-hidden="true">
+        <div class="zodiac-ring__track zodiac-ring__track--outer">
+          <span class="zodiac-ring__sign" style="--i:0">♈</span>
+          <span class="zodiac-ring__sign" style="--i:1">♉</span>
+          <span class="zodiac-ring__sign" style="--i:2">♊</span>
+          <span class="zodiac-ring__sign" style="--i:3">♋</span>
+          <span class="zodiac-ring__sign" style="--i:4">♌</span>
+          <span class="zodiac-ring__sign" style="--i:5">♍</span>
+          <span class="zodiac-ring__sign" style="--i:6">♎</span>
+          <span class="zodiac-ring__sign" style="--i:7">♏</span>
+          <span class="zodiac-ring__sign" style="--i:8">♐</span>
+          <span class="zodiac-ring__sign" style="--i:9">♑</span>
+          <span class="zodiac-ring__sign" style="--i:10">♒</span>
+          <span class="zodiac-ring__sign" style="--i:11">♓</span>
+        </div>
+      </div>
 
       <!-- Floating cosmic symbols -->
       <span class="hero__symbol" style="top:18%;left:8%"  aria-hidden="true">☽</span>
@@ -110,7 +137,7 @@
           <div class="stats__label">Tamamlanan Seans</div>
         </div>
         <div class="stats__item">
-          <div class="stats__num" data-count="8" data-suffix=" Yıl">8 Yıl</div>
+          <div class="stats__num" data-count="2" data-suffix=" Yıl">2 Yıl</div>
           <div class="stats__label">Deneyim</div>
         </div>
         <div class="stats__item">
@@ -144,7 +171,7 @@
 
             <div class="about__orbit-center">
               <span class="symbol">✦</span>
-              <span>Esra Yıldız</span>
+              <span>Esra Eşme</span>
             </div>
           </div>
         </div>
@@ -331,7 +358,7 @@
           Haritanız bir kader değil; kendinizi anlamak için elinizde
           olan en güçlü araçlardan biri.
         </blockquote>
-        <cite>— Esra Yıldız</cite>
+        <cite>— Esra Eşme</cite>
       </div>
     </section>
 
@@ -520,7 +547,7 @@
       <div class="footer__top">
 
         <div class="footer__brand">
-          <div class="footer__logo">Esra <span>Yıldız</span></div>
+          <div class="footer__logo">Esra <span>Eşme</span></div>
           <p class="footer__tagline">
             Astroloji, Numeroloji ve Inner Speak çalışmalarıyla
             kendinizi daha derin tanımanın yolculuğuna çıkın.
@@ -550,7 +577,7 @@
       </div>
 
       <div class="footer__bottom">
-        <p class="footer__copy">© 2026 Esra Yıldız — Tüm hakları saklıdır.</p>
+        <p class="footer__copy">© 2026 Esra Eşme — Tüm hakları saklıdır.</p>
         <div class="footer__socials" aria-label="Sosyal medya">
           <a href="#" class="footer__social" aria-label="Instagram">📸</a>
           <a href="#" class="footer__social" aria-label="YouTube">▶</a>

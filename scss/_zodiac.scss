@@ -1,0 +1,149 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ============================================================
+// ZODIAC RING — hero background element
+// ============================================================
+
+.zodiac-ring {
+  position: absolute;
+  inset: 0;
+  @include flex-center;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+
+  &__track {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 168, 76, 0.08);
+  }
+
+  &__track--outer {
+    width: min(900px, 95vw);
+    height: min(900px, 95vw);
+    animation: zodiacSpin 90s linear infinite;
+  }
+
+  &__sign {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.1rem;
+    color: rgba(201, 168, 76, 0.22);
+    transform-origin: 0 0;
+    transform:
+      rotate(calc(var(--i) * 30deg))
+      translateY(calc(min(450px, 47.5vw) * -1))
+      rotate(calc(var(--i) * -30deg));
+    transition: color 0.4s;
+    animation: signPulse 4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.33s);
+
+    &:hover { color: rgba(201, 168, 76, 0.7); }
+  }
+}
+
+@keyframes zodiacSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes signPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+// ============================================================
+// METEOR SHOWER — JS injects .meteor elements into body
+// ============================================================
+
+.meteor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: $color-gold-light;
+  pointer-events: none;
+  z-index: 0;
+  box-shadow: 0 0 6px 1px rgba(201, 168, 76, 0.6);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(to left, rgba(201, 168, 76, 0.5), transparent);
+  }
+}
+
+// ============================================================
+// PLANET TRAIL — decorative orbiting dot on about section
+// ============================================================
+
+.planet-trail {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $color-gold;
+  box-shadow: 0 0 16px $color-gold, 0 0 32px rgba(201, 168, 76, 0.4);
+  animation: orbitTrail 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes orbitTrail {
+  from { transform: rotate(0deg) translateX(190px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+}
+
+// ============================================================
+// MOON PHASE TICKER — subtle top-right decoration
+// ============================================================
+
+.moon-phase {
+  position: fixed;
+  top: 80px;
+  right: $space-lg;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  animation: fadeUp 1s $ease-out 1.5s forwards;
+  pointer-events: none;
+
+  @include tablet { display: none; }
+
+  &__symbol {
+    font-size: 1.6rem;
+    color: rgba(201, 168, 76, 0.55);
+    animation: moonGlow 6s ease-in-out infinite;
+  }
+
+  &__label {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(201, 168, 76, 0.35);
+  }
+}
+
+@keyframes moonGlow {
+  0%, 100% { text-shadow: 0 0 8px rgba(201,168,76,0.2); }
+  50%       { text-shadow: 0 0 20px rgba(201,168,76,0.55); }
+}
+
+// ============================================================
+// CONSTELLATION CANVAS (layered on top of star canvas)
+// ============================================================
+
+#constellationCanvas {
+  opacity: 0.45;
+}
